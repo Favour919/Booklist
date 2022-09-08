@@ -40,7 +40,7 @@ class UI{
         const div = document.createElement('div');
         div.className = `alert alert-${className}`;
         div.appendChild(document.createTextNode(message));
-        const container = document.querySelector('container');
+        const container = document.querySelector('.container');
         const form = document.querySelector('#book-form');
         container.insertBefore(div, form);
 
@@ -90,7 +90,7 @@ class Store {
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
 // Event Add a Book
-document.querySelector('book-form').addEventListener('submit', (e) => {
+document.querySelector('#book-form').addEventListener('submit', (e) => {
     // prevent actual submit
     e.preventDefault();
 
@@ -101,7 +101,7 @@ document.querySelector('book-form').addEventListener('submit', (e) => {
 
     // validate
     if (title === "" || author === "" || isbn === "") {
-        UI.showAlert('Please Fill All Fields')
+        UI.showAlert('Please Fill All Fields', 'danger')
     } else {
         // initiate book
         const book = new Book(title, author, isbn);
