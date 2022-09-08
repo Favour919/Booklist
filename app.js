@@ -113,7 +113,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
         Store.addBook(book)
 
         // Show Success message
-        UI.showAlert('Book Added', 'sucess');
+        UI.showAlert('Book Added', 'success');
     
         // Clear fields
         UI.clearField();
